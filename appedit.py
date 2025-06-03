@@ -1,5 +1,4 @@
-
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import json
 import os
 
@@ -137,6 +136,10 @@ def submit_score(group_id, fixture_index):
     scores[group_id] = group_scores
     save_scores(scores)
     return redirect(url_for("group", group_id=group_id))
+
+@app.route("/scores.json")
+def scores_json():
+    return jsonify(load_scores())
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
