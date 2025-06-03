@@ -1,10 +1,10 @@
-
 from flask import Flask, render_template
 import json
-import os
+import requests
 
 app = Flask(__name__)
-DATA_FILE = 'scores.json'
+
+ADMIN_API_URL = 'https://radcliffe-admin.onrender.com'  # ← Make sure this is correct
 
 groups = {
     'A': {
@@ -74,9 +74,14 @@ groups = {
 }
 
 def load_scores():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r') as f:
-            return json.load(f)
+    try:
+        res = requests.get(ADMIN_API_URL)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            print("Failed to fetch scores: ", res.status_code)
+    except Exception as e:
+        print("Error fetching scores:", e)
     return {}
 
 def calculate_table(fixtures, scores):
