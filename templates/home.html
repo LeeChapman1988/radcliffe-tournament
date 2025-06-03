@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radcliffe Juniors Tournament</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        ul.group-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.group-list li {
+            background: #e6f0ff;
+            margin: 0.5em 0;
+            padding: 1em;
+            border-left: 5px solid #004080;
+            border-radius: 5px;
+        }
+        ul.group-list li a {
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+        ul.group-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to Radcliffe Juniors Parents Tournament - Sunday 8th June</h1>
+</header>
+<div class="container">
+    <h2>Groups and Finals</h2>
+    <ul class="group-list">
+        <li><a href="{{ url_for('group', group_id='A') }}">Group A - Pitch 1</a></li>
+        <li><a href="{{ url_for('group', group_id='B') }}">Group B - Pitch 2</a></li>
+        <li><a href="{{ url_for('group', group_id='C') }}">Group C - Pitch 3</a></li>
+        <li><a href="{{ url_for('group', group_id='D') }}">Group D - Pitch 4</a></li>
+        <li><a href="{{ url_for('group', group_id='Semi1') }}">Semi Final - Pitch 1</a></li>
+        <li><a href="{{ url_for('group', group_id='Semi2') }}">Semi Final - Pitch 3</a></li>
+        <li><a href="{{ url_for('group', group_id='Final') }}">Final - Pitch 3</a></li>
+    </ul>
+</div>
+</body>
+</html>
