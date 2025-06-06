@@ -24,10 +24,10 @@ base_groups = {
         'pitch': 'Pitch 2',
         'fixtures': [
             ("1:00 PM", "Raiders", "Sapphires"),
-            ("1:20 PM", "Lightning", "Thunder"),
+            ("1:20 PM", "Lightning", "Devils"),
             ("1:40 PM", "Raiders", "Lightning"),
-            ("2:00 PM", "Sapphires", "Thunder"),
-            ("2:20 PM", "Raiders", "Thunder"),
+            ("2:00 PM", "Sapphires", "Devils"),
+            ("2:20 PM", "Raiders", "Devils"),
             ("2:40 PM", "Sapphires", "Lightning")
         ]
     },
@@ -35,11 +35,11 @@ base_groups = {
         'pitch': 'Pitch 3',
         'fixtures': [
             ("1:00 PM", "Sonics", "Buzz Bees"),
-            ("1:20 PM", "Devils", "Grim Reapers"),
-            ("1:40 PM", "Sonics", "Devils"),
+            ("1:20 PM", "Thunder", "Grim Reapers"),
+            ("1:40 PM", "Sonics", "Thunder"),
             ("2:00 PM", "Buzz Bees", "Grim Reapers"),
             ("2:20 PM", "Sonics", "Grim Reapers"),
-            ("2:40 PM", "Buzz Bees", "Devils")
+            ("2:40 PM", "Buzz Bees", "Thunder")
         ]
     },
     'D': {
