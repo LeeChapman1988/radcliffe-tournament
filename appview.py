@@ -1,10 +1,12 @@
-
 from flask import Flask, render_template, jsonify
 import json
 import os
+import requests
 
 app = Flask(__name__)
-DATA_FILE = 'scores.json'
+
+# USE THIS URL TO PULL SCORES FROM RADCLIFFE-ADMIN
+ADMIN_SCORES_URL = "https://radcliffe-admin.onrender.com/scores.json"
 
 base_groups = {
     'A': {
@@ -58,10 +60,11 @@ base_groups = {
 }
 
 def load_scores():
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r') as f:
-            return json.load(f)
-    return {}
+    try:
+        response = requests.get(ADMIN_SCORES_URL, timeout=5)
+        return response.json()
+    except:
+        return {}
 
 def safe_int(val):
     try:
@@ -159,7 +162,7 @@ def group(group_id):
 
 @app.route("/scores.json")
 def scores_json():
-    _, scores = get_dynamic_groups()
+    scores = load_scores()
     return jsonify(scores)
 
 if __name__ == "__main__":
