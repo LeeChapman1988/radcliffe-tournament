@@ -4,7 +4,7 @@ import json
 import os
 
 app = Flask(__name__)
-DATA_FILE = 'scores.json'
+DATA_FILE = '/data/scores.json'
 
 # Base group fixtures
 base_groups = {
